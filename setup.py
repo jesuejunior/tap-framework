@@ -11,10 +11,10 @@ setup(name='tap-framework',
       classifiers=['Programming Language :: Python :: 3 :: Only'],
       py_modules=['tap_framework'],
       install_requires=[
-          'singer-python>=5.1.0,<5.2.0',
+          'singer-python>=5.1.0,<5.12.5',
           'backoff==1.3.2',
-          'requests==2.18.4',
-          'requests-oauthlib==0.8.0',
+          'requests>=2.18.4',
+          'requests-oauthlib>=0.8.0',
           'funcy==1.10.1',
       ],
       packages=['tap_framework'])
