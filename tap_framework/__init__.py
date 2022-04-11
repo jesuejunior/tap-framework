@@ -48,7 +48,7 @@ class Runner:
 
         return streams
 
-    def do_discover(self):
+    def do_discover(self, stdout=True):
         LOGGER.info("Starting discovery.")
 
         catalog = []
@@ -57,8 +57,10 @@ class Runner:
             stream = available_stream(self.config, self.state, None, None)
 
             catalog += stream.generate_catalog()
-
-        json.dump({'streams': catalog}, sys.stdout, indent=4)
+        if stdout:
+            json.dump({'streams': catalog}, sys.stdout, indent=4)
+        else:
+            return json.dump({'streams': catalog}, indent=2)
 
     def do_sync(self):
         LOGGER.info("Starting sync.")
