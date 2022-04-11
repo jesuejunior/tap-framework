@@ -60,7 +60,7 @@ class Runner:
         if stdout:
             json.dump({'streams': catalog}, sys.stdout, indent=4)
         else:
-            return json.dump({'streams': catalog}, indent=2)
+            return catalog
 
     def do_sync(self):
         LOGGER.info("Starting sync.")
